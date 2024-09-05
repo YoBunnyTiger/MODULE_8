@@ -1,10 +1,9 @@
 def add_everything_up(a, b):
     try:
-        result = a + b
-        return round(result, 3)
-
+        result = round((a + b), 3)
     except TypeError:
-        return str(a) + str(b)
+        result = str(a) + str(b)
+    return result
 
 
 print(add_everything_up(123.456, 'строка'))
