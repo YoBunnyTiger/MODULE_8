@@ -10,17 +10,19 @@ class Car:
     def __is_valid_vin(vin_number):
         if isinstance(vin_number, int) is False:
             raise IncorrectVinNumber("Некорректный тип vin номер")
-        if vin_number < 1000000 or vin_number > 9999999:
+        elif vin_number < 1000000 or vin_number > 9999999:
             raise IncorrectVinNumber("Неверный диапазон для vin номера")
-        return True
+        else:
+            return True
 
     @staticmethod
     def __is_valid_numbers(numbers):
         if isinstance(numbers, str) is False:
             raise IncorrectCarNumbers("Некорректный тип данных для номеров")
-        if len(numbers) != 6:
+        elif len(numbers) != 6:
             raise IncorrectCarNumbers("Неверная длина номера")
-        return True
+        else:
+            return True
 
 
 class IncorrectVinNumber(Exception):
